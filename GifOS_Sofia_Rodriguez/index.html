@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GIFOS - Sofia Rodriguez</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="./styles/styles.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <header>
+            <nav id="menu_box" class="menu">
+                <img id="logo" class="imagen texto" src="images/logo_captura.JPG">
+                <div id="menu_componentes" class="menu">
+                    <a id="modo_nocturno_menu" class="componente texto">MODO NOCTURNO</a>
+                    <a id="favoritos_menu" class="componente texto">FAVORITOS</a>
+                    <a id="mis_gifos_menu" class="componente texto">MIS GIFOS</a>
+                    <button id="agregar_gif"></button>
+                </div>
+                
+            </nav>
+        </header>
+
+        <main>
+            <div id="principal" class="cuerpo">
+                <h1 id="titulo_principal" class="texto">Inspírate, busca, guarda y crea los mejores <span>GIFOS</span></h1>
+                <div id="imagen_principial" class="imagen"><img src="images/imagen_principal.svg"></div>
+                <div id="barra_busqueda">
+                    <img id="lupa" class="imagen">
+                </div>
+                <div id="trending_principal">
+                    <p class="texto">Trending:</p>
+                    <p id="trending_topics" class="texto">Reactions, Entertainment, Sports, Stickers, Artists</p>
+                </div>
+            </div>
+
+            <div id="trending_section" class="cuerpo">
+                <h1 id="trending_title" class="texto">Trending GIFOS</h1>
+                <p id="trending_text" class="texto">Mira los últimos GIFOS de nuestra comunidad.</p>
+                <div id="trending_gifs" class="gifs">
+                    <button id="prev_btn" class="button"> ATRAS </button>
+                    <div class="gif"></div>
+                    <div class="gif"></div>
+                    <div class="gif"></div>
+                    <div class="hover_gif">
+                        <button id="like" class="button texto">corazon</button>
+                        <button id="download" class="button texto">DWNLD</button>
+                        <button id="expand" class="button texto">EXPAND</button>
+                        <p id="gif_user" class="texto texto">User</p>
+                        <p id="gif_titulo" class="texto texto">Titulo GIFO</p>   
+                    <button id="fwrd_btn" class="button texto"> FWRD </button>                     
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div id="redes_box" class="redes">
+                <p class="texto">Compartir en:</p>
+                <div class="placeholder">FB</div>
+                <div class="placeholder">TW</div>
+                <div class="placeholder">IG</div>
+            </div>
+
+            <p id="copyright" class="texto">GIFOS 2020 All Rights Reserved.</p>
+        </footer>
+        <script src="./scripts/script.js" defer></script>
+    </body>
+</html>

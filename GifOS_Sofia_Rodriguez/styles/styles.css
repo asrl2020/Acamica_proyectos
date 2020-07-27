@@ -1,0 +1,126 @@
+/* Global reset */
+* {
+    margin:0;
+    padding:0;
+}
+
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+
+.texto {
+    font-family: 'Lato', sans-serif;
+}
+
+/* Desktop version styles */
+@media all and (min-width: 400px) {
+
+    /* Estilos para el menu y barra de navegación */
+    header {
+        display: flex;
+
+    }
+    #menu_box {
+        border-top: 5px solid #572EE5;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        flex-direction: row;
+        padding: 1.5% 6% 0 8%;
+        width: 100%;
+    }
+
+    #logo {
+        width: 12%;
+    }
+
+    #menu_componentes {
+        grid-column: 2/3;
+        display: grid;
+        grid-template-columns: 35% 25% 25% 15%;
+    } 
+
+    #modo_nocturno_menu {
+        grid-column: 1/2;
+        font-size: .8rem;
+        font-weight: 700;
+        display: flex;
+        align-self: center;
+        color: #572EE5;
+        position: relative;
+        top: -10px;
+        left: 40px;
+    }
+
+    #favoritos_menu {
+        grid-column: 2/3;
+        font-size: .8rem;
+        font-weight: 700;
+        display: flex;
+        align-self: center;
+        color: #572EE5;
+        position: relative;
+        top: -10px;
+        left: 12px;
+    }
+
+    #mis_gifos_menu {
+        grid-column: 3/4;
+        font-size: .8rem;
+        font-weight: 700;
+        display: flex;
+        align-self: center;
+        color: #572EE5;
+        position: relative;
+        top: -10px;
+        left: 0;
+    }
+
+    #agregar_gif {
+        grid-column: 4/5;
+        border-radius: 100%;
+        width: 55px;
+        height: 55px;
+        border: 1px solid #572EE5;
+        background-color: white;
+        position: relative;
+        left: -40px;
+    }
+
+    #agregar_gif:hover {
+        color: white;
+        background-color: #572EE5;
+    }
+
+    #agregar_gif:active {
+        color: white;
+        background-color: #9CAFC3;
+        border: none;
+    }
+
+    /* Estilos para imagen pricipal y barra buscadora*/
+    #principal {
+        width: 100%;
+        padding-top: 8%;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+    }
+
+    #titulo_principal {
+        display: flex;
+        align-self: center;
+        text-align: center;
+        color: #572EE5;
+        font-size: 2.5rem;
+        width: 48%;
+    }
+
+    #titulo_principal > span {
+        color: #50E3C2;
+        float: left;
+        position: relative;
+    }
+}
+
+/* Mobile version styles */
+@media all and (max-width: 400px) {
+}
