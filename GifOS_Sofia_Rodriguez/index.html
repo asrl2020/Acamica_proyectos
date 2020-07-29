@@ -23,12 +23,13 @@
         <main>
             <div id="principal" class="cuerpo">
                 <h1 id="titulo_principal" class="texto">Inspírate, busca, guarda y crea los mejores <span>GIFOS</span></h1>
-                <div id="imagen_principial" class="imagen"><img src="images/imagen_principal.svg"></div>
+                <div id="imagen_principal" class="imagen"><img src="images/imagen_principal.svg"></div>
                 <div id="barra_busqueda">
-                    <img id="lupa" class="imagen">
+                    <input type="text" id="input_busqueda" name="input_busqueda" placeholder="Busca GIFOS y más">
+                    <img id="lupa" class="imagen" src="images/icono_lupa.svg">
                 </div>
                 <div id="trending_principal">
-                    <p class="texto">Trending:</p>
+                    <p id="titulo_trending" class="texto">Trending:</p>
                     <p id="trending_topics" class="texto">Reactions, Entertainment, Sports, Stickers, Artists</p>
                 </div>
             </div>
@@ -37,17 +38,17 @@
                 <h1 id="trending_title" class="texto">Trending GIFOS</h1>
                 <p id="trending_text" class="texto">Mira los últimos GIFOS de nuestra comunidad.</p>
                 <div id="trending_gifs" class="gifs">
-                    <button id="prev_btn" class="button"> ATRAS </button>
-                    <div class="gif"></div>
-                    <div class="gif"></div>
-                    <div class="gif"></div>
+                    <button id="prev_btn" class="button"> &#60; </button>
+                    <div class="gif">1</div>
+                    <div class="gif">2</div>
+                    <div class="gif">3</div>
                     <div class="hover_gif">
                         <button id="like" class="button texto">corazon</button>
                         <button id="download" class="button texto">DWNLD</button>
                         <button id="expand" class="button texto">EXPAND</button>
                         <p id="gif_user" class="texto texto">User</p>
                         <p id="gif_titulo" class="texto texto">Titulo GIFO</p>   
-                    <button id="fwrd_btn" class="button texto"> FWRD </button>                     
+                    <button id="fwrd_btn" class="button texto"> &#62; </button>                     
                     </div>
                 </div>
             </div>

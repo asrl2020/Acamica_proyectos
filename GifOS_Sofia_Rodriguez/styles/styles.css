@@ -24,7 +24,7 @@
         display: grid;
         grid-template-columns: 50% 50%;
         flex-direction: row;
-        padding: 1.5% 6% 0 8%;
+        padding: 2% 6% 0 8%;
         width: 100%;
     }
 
@@ -83,6 +83,7 @@
         background-color: white;
         position: relative;
         left: -40px;
+        top: -10px;
     }
 
     #agregar_gif:hover {
@@ -106,19 +107,121 @@
     }
 
     #titulo_principal {
-        display: flex;
         align-self: center;
         text-align: center;
         color: #572EE5;
         font-size: 2.5rem;
         width: 48%;
+        line-height: 60px;
     }
 
     #titulo_principal > span {
         color: #50E3C2;
-        float: left;
-        position: relative;
     }
+
+    #imagen_principal {
+        width:100%;
+        display: flex;
+        justify-content: center;
+        padding-top: 2%;
+    }
+
+    #imagen_principal > img {
+        align-self: center;
+    }
+
+    #barra_busqueda {
+        border: 1px solid #572EE5;
+        width: 37%;
+        height: 50px;
+        align-self: center;
+        border-radius: 50px;
+        display: flex;
+        justify-items: center;
+        justify-content: space-between;
+        padding: 0 2% 0 4%;
+    }
+
+    #input_busqueda {
+        border: none;
+    }
+
+    #input_busqueda::placeholder {
+        color: #9CAFC3;
+        font-family: 'Lato', sans-serif;
+        font-size: .95rem;
+        font-weight: 100;
+    }
+
+    #lupa {
+        position: relative; 
+    }
+
+    #trending_principal {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-top: 6%;
+        color: #572EE5;
+        font-size: 1rem;
+        line-height: 25px;
+    }
+
+    #titulo_trending {
+        font-weight: 700;
+    }
+
+    #trending_topics {
+        font-weight: 100;
+    }
+}
+
+/* Estilos para seccion de trending */
+#trending_section {
+    background-color: #F3F5F8;
+    height: 400%;
+    padding-top: 5%;
+    width: 100%;
+    text-align: center;
+}
+
+#trending_title {
+    color: #572EE5;
+    line-height: 70px;
+}
+
+#trending_text {
+    color: black;
+}
+
+#trending_gifs {
+    display: flex;
+    flex-direction: row;
+    padding-top: 5%;
+}
+
+#prev_btn {
+    height: 40px;
+    width: 40px;
+    font-size: 1rem;
+    border: 1px solid #572EE5;
+    background-color: white;
+}
+
+#fwrd_btn {
+    height: 40px;
+    width: 40px;
+    font-size: 1rem;
+    border: 1px solid #572EE5;
+    background-color: white;
+}
+
+.gif {
+    height: 300px;
+    width: 300px;
+    border: 1px solid black;
+    margin: 0 2% 2% 2%;
 }
 
 /* Mobile version styles */
