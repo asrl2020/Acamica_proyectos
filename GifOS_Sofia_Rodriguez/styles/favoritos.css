@@ -1,0 +1,31 @@
+/* Desktop version styles */
+@media all and (min-width: 400px) {
+
+    /* Estilos titulo */
+    #favoritos{
+        margin: 2% 9% 2% 9%;
+        text-align: center;
+        color: #572EE5;
+    }
+
+    #favorite_grid{
+        border: 1px solid black;
+        height: 300px;
+        margin: 5% 0 5% 0;
+    }
+
+    #btn_favoritos{
+        border: 1px solid #572EE5;
+        background-color: white;
+        height: 50px;
+        width: 160px;
+        border-radius: 50px;
+        color: #572EE5;
+        font-weight: bold;
+    }
+
+    #btn_favoritos:hover{
+        background-color: #572EE5;
+        color: white;
+    }
+}
