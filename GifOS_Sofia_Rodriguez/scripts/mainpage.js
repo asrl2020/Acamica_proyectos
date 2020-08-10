@@ -1,37 +1,8 @@
+// Import functions
+import { trendingSection } from "./trendingSectionScripts.js";
+
+// Constante para API key
 const apikey = "0NZnU4ct8I0LcZ1Xd52YQ1kM5P7IMre8";
-// Scripts para la sección de trending gifs
-/*async function gifsTrendingSection() {
-    let url = "https://api.giphy.com/v1/gifs/trending?api_key=0NZnU4ct8I0LcZ1Xd52YQ1kM5P7IMre8&limit=3&rating=g"
-    let response = await fetch(url);
-    let commits = await response.json();
-    console.log(commits);
-
-    // Obtener imagenes
-    for (let i=0; i<commits.data.length; i++){
-        let image = commits.data[i].images.original.url;
-        let trendingGifHTML = document.getElementById("gifjs" + (i+1));
-        let trendingGif = document.createElement("img");
-        trendingGif.src = image;
-        trendingGif.style.height = "18rem";
-        trendingGif.style.width = "100%";
-        trendingGifHTML.appendChild(trendingGif);
-    }
-
-    // Obtener usernames
-    for(let i=0; i<commits.data.length; i++) {
-        let username = commits.data[i].username;
-        let gifUserHTML = document.getElementById("gif_user" + (i+1));
-        gifUserHTML.innerHTML = username;
-    }
-
-    // Obtener titulos
-    for(let i=0; i<commits.data.length; i++) {
-        let title = commits.data[i].title;
-        let titleHTML = document.getElementById("gif_titulo" + (i+1));
-        titleHTML.innerHTML = title;
-    }
-}
-gifsTrendingSection();*/
 
 // Obtener las busquedas más populares
 async function trendingSearches() {
@@ -56,6 +27,10 @@ function closeSearchBar(){
         let searchBar = document.getElementById("sugerencias_container");
         searchBar.style.display = "none";
         inputSearch.value = " ";
+        let imgLupa = document.getElementById("lupa");
+        imgLupa.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+        let imgClose = document.getElementById("close");
+        imgClose.src = "./images/icono_lupa.svg";
     });
 }
 
@@ -67,6 +42,10 @@ function openSearchBar(){
     inputSearch.addEventListener("keydown", () => {
         let searchBar = document.getElementById("sugerencias_container");
         searchBar.style.display = "block";
+        let imgLupa = document.getElementById("lupa");
+        imgLupa.src = "./images/icono_lupa.svg";
+        let imgClose = document.getElementById("close");
+        imgClose.src = "./images/close.svg";
     });
 }
 
@@ -107,6 +86,7 @@ async function searchResults() {
     console.log(commits);
     let titleSearch = document.getElementById("search_title");
     titleSearch.innerHTML = inputSearch.value;
+    titleSearch.style.borderTop = "1px solid #9CAFC3";
 
     for (let i=0; i<12; i++){
         let gifImg = commits.data[i].images.original.url;
@@ -140,73 +120,20 @@ function removeSearchResults() {
     });
 }
 
-// Trending gifs prueba
-async function gifsTrendingSectionInfo() {
-    let url = "https://api.giphy.com/v1/gifs/trending?api_key=0NZnU4ct8I0LcZ1Xd52YQ1kM5P7IMre8&limit=3&rating=g"
-    let response = await fetch(url);
-    let commits = await response.json();
-    console.log(commits);
+// Toggle dark mode
+function toggleDarkMode() {
+    let darkModeBtn = document.getElementById("modo_nocturno");
+    darkModeBtn.addEventListener("click", ()=> {
+        let stylesheet = document.getElementById("style_main_page");
+        if (stylesheet.href.match("./styles/main_page.css")) {
+            stylesheet.href = "./styles/main_page_darkmode.css";    
+        }
+        else {
+            stylesheet.href = "./styles/main_page.css";  
+        }
+    })
     
-    // Obtener imagenes
-    for (let i=0; i<3; i++){
-        let image = commits.data[i].images.original.url;
-        let containerGifs = document.getElementById("trending_gifs");
-        let trendingGif = document.createElement("img");
-        trendingGif.src = image;
-        trendingGif.style.height = "300px";
-        trendingGif.style.width = "350px";
-        containerGifs.appendChild(trendingGif);
-
-        let hoverContainer = document.getElementById("trending_hover");
-        let hover = document.createElement("div");
-        hover.style.backgroundColor = "rgba(86, 46, 229, 0)";
-        hover.style.height = "300px";
-        hover.style.width = "350px";
-        hover.style.display = "flex";
-        hover.style.flexDirection = "column";
-        hoverContainer.appendChild(hover);
-
-        let username = commits.data[i].username;
-        let gifUsername = document.createElement("p");
-        gifUsername.innerHTML = username;
-        gifUsername.style.color = "white";
-        gifUsername.style.fontSize = ".9rem";
-        gifUsername.style.fontWeight = "100";
-        gifUsername.style.opacity = "0";
-        gifUsername.style.fontFamily = "Montserrat,sans-serif";
-        gifUsername.style.zIndex = "200";
-        hover.appendChild(gifUsername);
-
-        let title = commits.data[i].title;
-        let gifTitle = document.createElement("p");
-        gifTitle.innerHTML = title;
-        gifTitle.style.color = "white";
-        gifTitle.style.opacity = "0";
-        gifTitle.style.fontFamily = "Montserrat,sans-serif";
-        gifTitle.style.zIndex = "200";
-        hover.appendChild(gifTitle);
-
-        hover.addEventListener("mouseover", () => {
-            hover.style.backgroundColor = "rgba(86, 46, 229, 0.467)";
-            gifTitle.style.opacity = "1";
-            gifUsername.style.opacity = "1";
-        });
-
-        hover.addEventListener("mouseout", () => {
-            hover.style.backgroundColor = "rgba(86, 46, 229, 0)";
-            gifTitle.style.opacity = "0";
-            gifUsername.style.opacity = "0";
-        });
-
-        
-    }
-}gifsTrendingSectionInfo();
-
-async function showUserandTitleOnGifs(){
-
-}
-
-
+}toggleDarkMode();
 
 openSearchBar();
 closeSearchBar();
@@ -215,5 +142,6 @@ trendingSearches();
 removeSearchResults();
 searchSuggestions();
 searchResultDropDown();
+trendingSection();
 
 

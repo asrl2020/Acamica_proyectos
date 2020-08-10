@@ -4,14 +4,17 @@
         <title>GIFOS - Sofia Rodriguez</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="./styles/main_page.css" rel="stylesheet" type="text/css">
+        <link id="style_main_page" href="./styles/main_page.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <header>
-            <nav id="menu_box" class="menu">
-                <div id="logo" class="imagen texto">
+
+            <!--Inicia sección del nav bar, menu superior, logo y agregar GIFs-->
+            <nav id="menu_box" class="menu_box_class">
+                <a href="main_page.html" id="logo" class="texto">
+
+                        <!--Logo insertado como SVG para mantener fuente de página-->
                         <svg width="63px" height="60px" viewBox="0 0 63 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
                             <title>logo-desktop</title>
                             <desc>Created with Sketch.</desc>
                             <defs>
@@ -27,7 +30,7 @@
                                                     <use xlink:href="#path-1"></use>
                                                 </mask>
                                                 <g id="Clip-3"></g>
-                                                <text id="GIFOS" mask="url(#mask-2)" font-size="16" font-weight="700" fill="#572EE5">
+                                                <text class="gifos_logo" id="GIFOS_2" mask="url(#mask-2)" font-size="16" font-weight="700">
                                                     <tspan x="3" y="21">GIFOS</tspan>
                                                 </text>
                                             </g>
@@ -36,26 +39,29 @@
                                 </g>
                             </g>
                         </svg>
-                </div>
-                <div id="menu_componentes" class="menu">
-                    <a id="modo_nocturno_menu" class="componente texto">MODO NOCTURNO</a>
-                    <a href="favorites.html" id="favoritos_menu" class="componente texto">FAVORITOS</a>
-                    <a href="mis_gifos.html" id="mis_gifos_menu" class="componente texto">MIS GIFOS</a>
-                    <a href="agregar_gif.html"><button id="agregar_gif"></button></a>
+                    </a>
+
+                <!--Barra de menu-->
+                <div id="menu_componentes">
+                    <a id="modo_nocturno" class="texto modo_nocturno_menu">MODO NOCTURNO</a>
+                    <a href="favorites.html" class="texto favoritos_menu">FAVORITOS</a>
+                    <a href="mis_gifos.html" id="mis_gifos_menu" class="texto">MIS GIFOS</a>
+                    <button id="agregar_gif"></button><a href="agregar_gif.html"></a></button>
                 </div>
                 
             </nav>
         </header>
 
         <main>
+            <!--Sección principal de la página. Imagen y barra de busqueda-->
             <div id="principal" class="cuerpo">
                 <h1 id="titulo_principal" class="texto">Inspírate, busca, guarda y crea los mejores <span>GIFOS</span></h1>
                 <div id="imagen_principal" class="imagen"><img src="images/imagen_principal.svg"></div>
                 <div id="barra_busqueda_abierta">
                     <div id="input_btn">
-                        <button id="btn_lupa"><img id="lupa" src="images/icono_lupa.svg"></button>
-                        <input type="text" id="input_busqueda" name="input_busqueda">
-                        <button id="btn_close"><img id="close" class="imagen" src="images/close.svg"></button>
+                        <button id="btn_lupa"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" id="lupa"></button>
+                        <input type="text" id="input_busqueda" name="input_busqueda" placeholder="Busca GIFOS y más">
+                        <button id="btn_close"></button>
                     </div>
                     <div id="sugerencias_container">
                         <p id="sugerencia1" class="texto"></p>
@@ -64,6 +70,7 @@
                         <p id="sugerencia4"class="texto"></p>
                     </div>
                 </div>
+        
                 <div id="trending_principal">
                     <p id="titulo_trending" class="texto">Trending:</p>
                     <p id="trending_topics" class="texto">
@@ -82,66 +89,29 @@
                 <button id="btn_search">VER MÁS</button>
             </div></div>
 
-            <!--<div id="trending_section" class="cuerpo">
-                <h1 id="trending_title" class="texto">Trending GIFOS</h1>
-                <p id="trending_text" class="texto">Mira los últimos GIFOS de nuestra comunidad.</p>
-                <div id="trending_gifs" class="gifs">
-                    <button id="prev_btn" class="button"> &#60; </button>
-                    <div class="gif gif1" id="gifjs1"></div>
-                    <div class="gif gif2" id="gifjs2"></div>
-                    <div class="gif gif3" id="gifjs3"></div>
-                    <div class="hover_gif gif1" id="hover1">
-                        <button class="btn_like" class="button texto"><img src="images/icon-fav.svg"></button>
-                        <button class="btn_download" class="button texto"><img src="images/icon-download.svg"></button>
-                        <button class="btn_expand" class="button texto"><img src="images/icon-max.svg"></button>
-                        <p id="gif_user1" class="texto user_trending_gif"></p>
-                        <p id="gif_titulo1" class="texto title_trending_gif"></p>                   
-                    </div>
-
-                    <div class="hover_gif gif2" id="hover2">
-                        <button class="btn_like" class="button texto"><img src="images/icon-fav.svg"></button>
-                        <button class="btn_download" class="button texto"><img src="images/icon-download.svg"></button>
-                        <button class="btn_expand" class="button texto"><img src="images/icon-max.svg"></button>
-                        <p id="gif_user2" class="texto user_trending_gif"></p>
-                        <p id="gif_titulo2" class="texto title_trending_gif"></p>                    
-                    </div>
-
-                    <div class="hover_gif gif3" id="hover3">
-                            <button class="btn_like" class="button texto"><img src="images/icon-fav.svg"></button>
-                            <button class="btn_download" class="button texto"><img src="images/icon-download.svg"></button>
-                            <button class="btn_expand" class="button texto"><img src="images/icon-max.svg"></button>
-                        <p id="gif_user3" class="texto user_trending_gif"></p>
-                        <p id="gif_titulo3" class="texto title_trending_gif"></p>                    
-                    </div>
-                    <button id="fwrd_btn" class="button texto"> &#62; </button>  
-                </div>
-            </div>-->
-
+            <!--Sección con los gifs trending de ese momento-->
             <div id="trending_sectionII">
                 <h1 id="trending_title" class="texto">Trending GIFOS</h1>
                 <p id="trending_text" class="texto">Mira los últimos GIFOS de nuestra comunidad.</p>
-                <button id="prev_btn">PREV</button>
-                <button id="fwrd_btn">FWRD</button>
-                <div id="trending_gifs">
-                    <!--<div class="placeholderII"></div>
-                    <div class="placeholderII"></div>
-                    <div class="placeholderII"></div>-->
-                </div>
-                <div id="trending_hover"></div>
+                <button id="prev_btn"></button>
+                <button id="fwrd_btn"></button>
+                <div id="trending_gifs_container"><div id="trending_gifs"></div></div>
+                <div id="trending_hover_container"><div id="trending_hover"></div></div>
                 
             </div>
         </main>
 
+        <!--Footer, incluye redes sociales y copyright-->
         <footer>
             <div id="redes_box" class="redes">
                 <p class="texto">Compartir en:</p>
-                <div class="placeholder">FB</div>
-                <div class="placeholder">TW</div>
-                <div class="placeholder">IG</div>
+                <a class="redes_icon" id="facebook" href="https://www.facebook.com/" target="blank"></a>
+                <a class="redes_icon" id="twitter" href="https://twitter.com/home" target="blank"></a>
+                <a class="redes_icon" id="instagram" href="https://www.instagram.com/" target="blank"></a>
             </div>
 
             <p id="copyright" class="texto">&#169; GIFOS 2020 All Rights Reserved.</p>
         </footer>
-        <script src="./scripts/mainpage.js" defer></script>
+        <script type="module" src="./scripts/mainpage.js" defer></script>
     </body>
 </html>

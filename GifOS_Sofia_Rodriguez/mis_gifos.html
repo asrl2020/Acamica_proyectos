@@ -38,11 +38,12 @@
                         </g>
                     </svg>
                 </a>
+                <!--Barra de menu-->
                 <div id="menu_componentes" class="menu">
                     <a id="modo_nocturno_menu" class="componente texto">MODO NOCTURNO</a>
-                    <a id="favoritos_menu" class="componente texto">FAVORITOS</a>
-                    <a id="mis_gifos_menu" class="componente texto">MIS GIFOS</a>
-                    <button id="agregar_gif"></button>
+                    <a href="favorites.html" id="favoritos_menu" class="componente texto">FAVORITOS</a>
+                    <a href="mis_gifos.html" id="mis_gifos_menu" class="componente texto">MIS GIFOS</a>
+                    <button id="agregar_gif"></button><a href="agregar_gif.html"></a></button>
                 </div>
                 
             </nav>
@@ -55,52 +56,29 @@
                     <button id="btn_mis_gifos" class="texto button">VER MÁS</button>
                 </div>
     
-                <div id="trending_section" class="cuerpo">
-                    <h1 id="trending_title" class="texto">Trending GIFOS</h1>
-                    <p id="trending_text" class="texto">Mira los últimos GIFOS de nuestra comunidad.</p>
-                    <div id="trending_gifs" class="gifs">
-                        <button id="prev_btn" class="button"> &#60; </button>
-                        <div class="gif gif1" id="primergif"><img class="imagen_trending" src="https://dam.vanidades.com/wp-content/uploads/2020/04/%C2%A1Como-si-necesit%C3%A1ramos-m%C3%A1s-razones-para-amar-a-los-perritos-Seg%C3%BAn-investigadores-el-mejor-amigo-del-hombre-podr%C3%ADa-ayudar-a-detectar-el-coronavirus.-770x513.jpg"></div>
-                        <div class="gif gif2" id="segundogif"></div>
-                        <div class="gif gif3" id="tercergif"></div>
-                        <div class="hover_gif gif1" id="hover1">
-                            <button class="btn_like" class="button texto"><img src="images/icon-fav.svg"></button>
-                            <button class="btn_download" class="button texto"><img src="images/icon-download.svg"></button>
-                            <button class="btn_expand" class="button texto"><img src="images/icon-max.svg"></button>
-                            <p id="gif_user1" class="texto user_trending_gif">User</p>
-                            <p id="gif_titulo1" class="texto title_trending_gif">Titulo GIFO</p>                   
-                        </div>
-    
-                        <div class="hover_gif gif2" id="hover2">
-                            <button class="btn_like" class="button texto"><img src="images/icon-fav.svg"></button>
-                            <button class="btn_download" class="button texto"><img src="images/icon-download.svg"></button>
-                            <button class="btn_expand" class="button texto"><img src="images/icon-max.svg"></button>
-                            <p id="gif_user2" class="texto user_trending_gif">User</p>
-                            <p id="gif_titulo2" class="texto title_trending_gif">Titulo GIFO</p>                    
-                        </div>
-    
-                        <div class="hover_gif gif3" id="hover3">
-                                <button class="btn_like" class="button texto"><img src="images/icon-fav.svg"></button>
-                                <button class="btn_download" class="button texto"><img src="images/icon-download.svg"></button>
-                                <button class="btn_expand" class="button texto"><img src="images/icon-max.svg"></button>
-                            <p id="gif_user3" class="texto user_trending_gif">User</p>
-                            <p id="gif_titulo3" class="texto title_trending_gif">Titulo GIFO</p>                    
-                        </div>
-                        <button id="fwrd_btn" class="button texto"> &#62; </button>  
-                    </div>
-                </div>
-            </main>
-    
-            <footer>
-                <div id="redes_box" class="redes">
-                    <p class="texto">Compartir en:</p>
-                    <div class="placeholder">FB</div>
-                    <div class="placeholder">TW</div>
-                    <div class="placeholder">IG</div>
-                </div>
-    
-                <p id="copyright" class="texto">&#169; GIFOS 2020 All Rights Reserved.</p>
-            </footer>
-            <script src="./scripts/script.js" defer></script>
-        </body>
-    </html>
+            <!--Sección con los gifs trending de ese momento-->
+            <div id="trending_sectionII">
+                <h1 id="trending_title" class="texto">Trending GIFOS</h1>
+                <p id="trending_text" class="texto">Mira los últimos GIFOS de nuestra comunidad.</p>
+                <button id="prev_btn"></button>
+                <button id="fwrd_btn"></button>
+                <div id="trending_gifs_container"><div id="trending_gifs"></div></div>
+                <div id="trending_hover_container"><div id="trending_hover"></div></div>
+                
+            </div>
+        </main>
+
+        <!--Footer, incluye redes sociales y copyright-->
+        <footer>
+            <div id="redes_box" class="redes">
+                <p class="texto">Compartir en:</p>
+                <a class="redes_icon" id="facebook" href="https://www.facebook.com/" target="blank"></a>
+                <a class="redes_icon" id="twitter" href="https://twitter.com/home" target="blank"></a>
+                <a class="redes_icon" id="instagram" href="https://www.instagram.com/" target="blank"></a>
+            </div>
+
+            <p id="copyright" class="texto">&#169; GIFOS 2020 All Rights Reserved.</p>
+        </footer>
+        <script type="module" src="./scripts/mainpage.js" defer></script>
+    </body>
+</html>
