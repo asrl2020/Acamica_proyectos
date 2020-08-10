@@ -409,6 +409,12 @@ a{
         flex-wrap: nowrap;
     }
 
+    .trending_gif_js{
+        height: 300px;
+        width: 350px;
+        margin-left: 30px;
+    }
+
     #trending_hover_container{
         grid-row: 2/3;
         grid-column: 2/3;
@@ -536,69 +542,23 @@ a{
 @media all and (max-width: 400px) {
 
     /* Estilos para el menu y barra de navegación */
-    header {
-        display: flex;
-
-    }
-    .menu_box_class {
-        border-top: 5px solid #572EE5;
-        display: grid;
-        grid-template-columns: 50% 50%;
-        flex-direction: row;
-        padding: 2% 6% 0 8%;
-        width: 100%;
+    body header{
+        overflow: auto;
     }
 
-    #logo {
-        width: 12%;
+    #menu_box{
+        position: fixed;
     }
 
     .gifos_logo{
         fill: #572EE5;
     }
 
-    #menu_componentes {
-        grid-column: 2/3;
-        display: grid;
-        grid-template-columns: 35% 25% 25% 15%;
-    } 
-
-    .modo_nocturno_menu {
-        grid-column: 1/2;
-        font-size: .8rem;
-        font-weight: 700;
-        display: flex;
-        align-self: center;
-        position: relative;
-        top: -10px;
-        left: 40px;
-    }
-
-    .modo_nocturno_menu:hover{
-        border-bottom: 2px solid #5ED7C6;
-        width: 55%;
-    }
-
-    .modo_nocturno_menu:active{
-        color: #9CAFC3;
-        border-bottom: none;
-    }
-
     .favoritos_menu {
-        grid-column: 2/3;
         font-size: .8rem;
         font-weight: 700;
-        display: flex;
-        align-self: center;
-        position: relative;
-        top: -10px;
-        left: 12px;
     }
 
-    .favoritos_menu:hover{
-        border-bottom: 2px solid #5ED7C6;
-        width: 47%;
-    }
 
     .favoritos_menu:active{
         color: #9CAFC3;
@@ -606,19 +566,8 @@ a{
     }
 
     #mis_gifos_menu {
-        grid-column: 3/4;
         font-size: .8rem;
         font-weight: 700;
-        display: flex;
-        align-self: center;
-        position: relative;
-        top: -10px;
-        left: 0;
-    }
-
-    #mis_gifos_menu:hover{
-        border-bottom: 2px solid #5ED7C6;
-        width: 47%;
     }
 
     #mis_gifos_menu:active{
@@ -626,42 +575,20 @@ a{
         border-bottom: none;
     }
 
-
     #agregar_gif {
-        grid-column: 4/5;
-        border-radius: 100%;
         width: 55px;
         height: 55px;
         border: 1px solid #572EE5;
         background-color: white;
-        position: relative;
-        left: -40px;
-        top: -10px;
         background-image: url("../images/button-crear-gifo.svg");
         background-position: center;
         background-repeat: no-repeat;
     }
 
-    
-
-    #agregar_gif:hover {
-        color: white;
-        background-color: #572EE5;
-        background-image: url("../images/button-crear-gifo-hover.svg");
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-
-    #agregar_gif:active {
-        color: white;
-        background-color: #9CAFC3;
-        border: none;
-    }
 
     /* Estilos para imagen pricipal y barra buscadora*/
     #principal {
         width: 100%;
-        padding-top: 6%;
         display: flex;
         flex-direction: column;
         justify-items: center;
@@ -843,37 +770,38 @@ a{
 
     /* Estilos para trending section que será llenada con JS */
     #trending_sectionII{
+        display: grid;
+        grid-template-rows: 30% 0%;
         padding-top: 2%;
         background-color: #F3F5F8;
         height: 550px;
-        display: grid;
-        grid-template-columns: 10% 80% 10%;
-        grid-template-rows: 20% 80%;
         overflow: hidden;
     }
 
     #trending_title {
-        font-size: 1.8rem;
-        font-weight: 600;
         grid-row: 1/2;
-        grid-column: 1/4;
+        grid-column: 1/2;
+        padding-top: 10%;
+        font-size: 1.5rem;
+        font-weight: 600;
         justify-self: center;
         margin-top: 1.5%;
     }
 
     #trending_text {
+        grid-row: 1/2;
+        grid-column: 1/2;
+        padding-top: 20%;
         color: black;
         font-size: 1rem;
         font-weight: 100;
-        grid-row: 1/2;
-        grid-column: 1/4;
         justify-self: center;
-        margin-top: 4.5%;
+        margin-bottom: 10%;
     }
 
     #prev_btn{
+        grid-row: 2/3;
         grid-column: 1/2;
-        grid-row: 1/3;
         height: 50px;
         width: 50px;
         display: flex;
@@ -887,16 +815,9 @@ a{
         background-repeat: no-repeat;
     }
 
-    #prev_btn:hover{
-        background-color: #572EE5;
-        background-image: url("../images/button-left-hover.svg");
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-
     #fwrd_btn{
-        grid-row: 1/3;
-        grid-column: 3/4;
+        grid-row: 2/3;
+        grid-column: 1/2;
         height: 50px;
         width: 50px;
         display: flex;
@@ -910,19 +831,18 @@ a{
         background-repeat: no-repeat;
     }
 
-    #fwrd_btn:hover{
-        background-color: #572EE5;
-        background-image: url("../images/button-right-hover.svg");
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-
     #trending_gifs_container{
         grid-row: 2/3;
-        grid-column: 2/3;
+        grid-column: 1/2;
         height: 350px;
         z-index: 0;
         overflow: hidden;
+    }
+
+    .trending_gif_js{
+        height: 250px;
+        width: 300px;
+        margin-left: 30px;
     }
 
     #trending_gifs{
@@ -932,16 +852,11 @@ a{
     }
 
     #trending_hover_container{
-        grid-row: 2/3;
-        grid-column: 2/3;
-        height: 350px;
-        z-index: 100;
+        display: none;
     }
 
     #trending_hover{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap; 
+        display: none;
     }
 
     .div_buttons{

@@ -14,10 +14,8 @@ async function trendingSection() {
         let image = commits.data[i].images.original.url;
         containerGifs = document.getElementById("trending_gifs");
         let trendingGif = document.createElement("img");
+        trendingGif.classList.add("trending_gif_js");
         trendingGif.src = image;
-        trendingGif.style.height = "300px";
-        trendingGif.style.width = "350px";
-        trendingGif.style.marginLeft = "30px";
         containerGifs.appendChild(trendingGif);
         console.log(trendingGif);
 
