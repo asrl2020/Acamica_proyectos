@@ -5,6 +5,7 @@ async function trendingSection() {
     let response = await fetch(url);
     let commits = await response.json();
     let containerGifs;
+    let hoverContainer = document.getElementById("trending_hover");
     console.log(commits);
     
     // For para obtener imagenes, hovers, titulos y usernames
@@ -17,10 +18,9 @@ async function trendingSection() {
         trendingGif.classList.add("trending_gif_js");
         trendingGif.src = image;
         containerGifs.appendChild(trendingGif);
-        console.log(trendingGif);
+        //console.log(trendingGif);
 
         // Obtener hovers y su estilo
-        let hoverContainer = document.getElementById("trending_hover");
         let hover = document.createElement("div");
         hover.classList.add("hover_container_js");
         hoverContainer.appendChild(hover);
