@@ -2,7 +2,7 @@
 function searchResultDropDown() {
     let searchBtn = document.getElementById("btn_lupa");
     searchBtn.addEventListener("click", function(){searchResults()});
-}searchResultDropDown();
+}
 
 async function searchResults() {
     let searchSectionContainer = document.getElementById("search_section_container");
@@ -21,6 +21,7 @@ async function searchResults() {
 
     if (gridHTML.childElementCount > 0) {
         removeChilds();
+        console.log("hola");
     }
 
     // Titulo de la búsqueda actual
@@ -33,11 +34,13 @@ async function searchResults() {
 
         // Obtener gifs
         let gifImg = commits.data[i].images.original.url;
+        console.log(commits);
         let gridElementImg = document.createElement("img");
         gridElementImg.src = gifImg;
         gridHTML.appendChild(gridElementImg);
         gridElementImg.style.height = "200px";
         gridElementImg.style.width = "250px";
+        gridElementImg.setAttribute("id","gif" + i);
 
         // Obtener los hovers
         let gridElementHover = document.createElement("div");
@@ -52,9 +55,11 @@ async function searchResults() {
 
         // Like button
         let likeBtn = document.createElement("button");
-        likeBtn.classList.add("btnSearchResults");
+        likeBtn.classList.add("btnSearchResults", "favBtn");
+        likeBtn.setAttribute("id",i);
         let likeBtnImg = document.createElement("img");
         likeBtnImg.src = "./images/icon-fav.svg";
+        //likeBtnImg.setAttribute("id",i);
         
         // Download button
         let downloadBtn = document.createElement("button");
@@ -113,7 +118,31 @@ async function searchResults() {
             downloadBtn.style.display = "none";
             expandBtn.style.display = "none";
         });
+    } fetchFavorites(commits);
+}
+
+function fetchFavorites(gifsArray){
+    let favBtns = document.getElementsByClassName("favBtn");
+    console.log("favbtns lenght" + favBtns.length);
+    let gifsIds = new Array();
+
+    // Add event listener to all search results buttons
+    for (let i=0 ; i<favBtns.length ; i++){
+        console.log("hola console1");
+        favBtns[i].addEventListener("click", function(e) {
+            let favImgActive = document.createElement("img");
+            favImgActive.src = "images/icon-twitter.svg";
+            let favBtnChild = e.currentTarget;
+            favBtnChild.replaceChild(favImgActive, favBtnChild.childNodes[0]);
+            let gifID = gifsArray.data[favBtnChild.id].id;
+            //console.log(gifID);
+            gifsIds.push(gifID);
+
+            //console.log(gifsIds);
+
+            window.localStorage.setItem("gifsIds", JSON.stringify(gifsIds));
+        });
     }
 }
 
-export { searchResults } ;
+export { searchResultDropDown } ;

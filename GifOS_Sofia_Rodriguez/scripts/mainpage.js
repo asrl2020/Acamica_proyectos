@@ -1,6 +1,7 @@
 // Import functions
 import { trendingSection } from "./trendingSectionScripts.js";
-import { searchResults } from "./searchResults.js";
+import { searchResultDropDown } from "./searchResults.js";
+
 
 // Constante para API key
 const apikey = "0NZnU4ct8I0LcZ1Xd52YQ1kM5P7IMre8";
@@ -33,7 +34,7 @@ function closeSearchBar(){
         let imgClose = document.getElementById("close");
         imgClose.src = "./images/icono_lupa.svg";
     });
-}
+}closeSearchBar();
 
 
 // Comportamiento de la barra de busqueda (abrir) - Cambia en darkmode
@@ -115,7 +116,7 @@ function removeChilds(){
     }
 
     console.log("remove childs");
-}
+}removeSearchResults();
 
 // Toggle dark mode
 function toggleDarkMode() {
@@ -153,11 +154,9 @@ function openMenu(){
     }
 } openMenu();
 
-
-closeSearchBar();
 trendingSearches();
-
-removeSearchResults();
 searchSuggestions();
 trendingSection();
-searchResults();
+searchResultDropDown();
+
+console.log(window.localStorage.getItem("gifsIds"));

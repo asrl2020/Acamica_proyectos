@@ -290,9 +290,11 @@ a{
         border: 1px solid #572EE5;
         background-color: white;
         height: 50px;
-        width: 160px;
+        width: 130px;
         border-radius: 50px;
         font-weight: bold;
+        margin-bottom: 6%;
+        margin-top: 4%;
     }
 
     #btn_search:hover{
