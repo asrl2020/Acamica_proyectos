@@ -60,11 +60,11 @@ a{
         grid-column: 1/2;
         font-size: .8rem;
         font-weight: 700;
-        display: block;
+        display: flex;
         align-self: center;
         position: relative;
         top: -10px;
-        left: 12px;
+        left: 40px;
     }
 
     .modo_nocturno_menu::after{
@@ -73,7 +73,7 @@ a{
 
     .modo_nocturno_menu:hover{
         border-bottom: 2px solid #5ED7C6;
-        width: 120px;
+        width: 55%;
     }
 
     .modo_nocturno_menu:active{
@@ -98,7 +98,7 @@ a{
 
     .favoritos_menu:hover{
         border-bottom: 2px solid #5ED7C6;
-        width: 80px;
+        width: 47%;
     }
 
     .favoritos_menu:active{
@@ -123,7 +123,7 @@ a{
 
     #mis_gifos_menu:hover{
         border-bottom: 2px solid #5ED7C6;
-        width: 70px;
+        width: 47%;
     }
 
     #mis_gifos_menu:active{

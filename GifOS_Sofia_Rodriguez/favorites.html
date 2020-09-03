@@ -4,13 +4,18 @@
         <title>GIFOS - Sofia Rodriguez</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="./styles/main_page.css" rel="stylesheet" type="text/css">
+        <link id="style_main_page" href="./styles/main_page.css" rel="stylesheet" type="text/css">
         <link href="./styles/favoritos.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <header>
-            <nav id="menu_box" class="menu">
-                <a href="main_page.html" id="logo" class="imagen texto">
+
+            <!--Inicia sección del nav bar, menu superior, logo y agregar GIFs-->
+            <nav id="menu_box" class="menu_box_class">
+
+                <a href="index.html" id="logo" class="texto">
+
+                    <!--Logo insertado como SVG para mantener fuente de página-->
                     <svg width="63px" height="60px" viewBox="0 0 63 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
                         <title>logo-desktop</title>
@@ -28,7 +33,7 @@
                                                 <use xlink:href="#path-1"></use>
                                             </mask>
                                             <g id="Clip-3"></g>
-                                            <text id="GIFOS" mask="url(#mask-2)" font-size="16" font-weight="700" fill="#572EE5">
+                                            <text class="gifos_logo" id="GIFOS_2" mask="url(#mask-2)" font-size="16" font-weight="700" fill="#572EE5">
                                                 <tspan x="3" y="21">GIFOS</tspan>
                                             </text>
                                         </g>
@@ -38,23 +43,27 @@
                         </g>
                     </svg>
                 </a>
+
                 <!--Barra de menu-->
-                <div id="menu_componentes" class="menu">
-                    <a id="modo_nocturno_menu" class="componente texto">MODO NOCTURNO</a>
-                    <a href="favorites.html" id="favoritos_menu" class="componente texto">FAVORITOS</a>
-                    <a href="mis_gifos.html" id="mis_gifos_menu" class="componente texto">MIS GIFOS</a>
+                <button id="boton_menu_hamburguesa"><img id="menu_hamburguesa_img" src="images/burger.svg"></button>
+                <div id="menu_componentes">
+                    <a id="modo_nocturno" class="texto modo_nocturno_menu"></a>
+                    <a href="favorites.html" class="texto favoritos_menu"></a>
+                    <a href="mis_gifos.html" id="mis_gifos_menu" class="texto"></a>
                     <button id="agregar_gif"></button><a href="agregar_gif.html"></a></button>
                 </div>
                 
             </nav>
         </header>
+
         <main>
-                <div id="favoritos" class="favorite_page">
-                    <img src="images/icon-pixel-heart.svg">
-                    <h1 id="title_favoritos" class="texto">Favoritos</h1>
-                    <div id="favorite_grid"></div>
-                    <button id="btn_favoritos" class="texto button">VER MÁS</button>
-                </div>
+            <!--Sección principal de la página de favoritos-->
+            <div id="favoritos" class="favorite_page">
+                <img src="images/icon-pixel-heart.svg">
+                <h1 id="title_favoritos" class="texto">Favoritos</h1>
+                <div id="favorite_grid"></div>
+                <button id="btn_favoritos" class="texto button">VER MÁS</button>
+            </div>
     
             <!--Sección con los gifs trending de ese momento-->
             <div id="trending_sectionII">
@@ -79,6 +88,6 @@
 
             <p id="copyright" class="texto">&#169; GIFOS 2020 All Rights Reserved.</p>
         </footer>
-        <script type="module" src="./scripts/trendingSectionScripts.js" defer></script>
+        <script type="module" src="./scripts/favoritesFetch.js" defer></script>
     </body>
 </html>
