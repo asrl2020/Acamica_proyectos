@@ -1,3 +1,5 @@
+import { fetchFavorites } from "./searchResults.js";
+
 // Trending gifs prueba
 let i = 0;
 async function trendingSection() {
@@ -33,7 +35,8 @@ async function trendingSection() {
 
         // Like button
         let likeBtn = document.createElement("button");
-        likeBtn.classList.add("btnTrending");
+        likeBtn.classList.add("btnTrending", "favBtn");
+        likeBtn.setAttribute("id",i);
         let likeBtnImg = document.createElement("img");
         likeBtnImg.src = "./images/icon-fav.svg";
         
@@ -108,7 +111,7 @@ async function trendingSection() {
             expandBtn.style.display = "none";
         });
         
-    }
+    } fetchFavorites(commits);
 
     
     let fwrdBtn = document.getElementById("fwrd_btn");
@@ -124,7 +127,7 @@ async function trendingSection() {
         containerGifs.style.transform = `translateX(-${i}px)`;
         hoverContainer.style.transform = `translateX(-${i}px)`;
     });
-}
+} 
 
 export { trendingSection };
 

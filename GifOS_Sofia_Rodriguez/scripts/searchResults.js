@@ -135,14 +135,14 @@ function fetchFavorites(gifsArray){
             let favBtnChild = e.currentTarget;
             favBtnChild.replaceChild(favImgActive, favBtnChild.childNodes[0]);
             let gifID = gifsArray.data[favBtnChild.id].id;
-            //console.log(gifID);
+
             gifsIds.push(gifID);
 
-            //console.log(gifsIds);
-
             window.localStorage.setItem("gifsIds", JSON.stringify(gifsIds));
+            
         });
     }
 }
 
 export { searchResultDropDown } ;
+export { fetchFavorites } ;

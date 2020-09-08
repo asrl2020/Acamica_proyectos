@@ -1,4 +1,5 @@
 import { trendingSection } from "./trendingSectionScripts.js";
+import { fetchFavorites } from "./searchResults.js";
 
 trendingSection();
 
@@ -17,3 +18,28 @@ function toggleDarkMode() {
     })
     
 }toggleDarkMode();
+
+// Check if local storage is empty
+function checkLocalStorage() {
+    let btnFavoritos = document.getElementById("btn_favoritos");
+    let circleFavoritos = document.getElementById("circle");
+    let iconFavoritesEmpty = document.getElementById("icon_favorite");
+    let favoriteGridEmpty = document.getElementsByClassName("favorite_grid_empty");
+    let favoriteGridContainer = document.getElementById("favorite_grid_container");
+    if (localStorage === 0) {
+        btnFavoritos.style.display = "none";
+        circleFavoritos.style.display = "block";
+        iconFavoritesEmpty.style.display = "block";
+        favoriteGridEmpty.display = "block";
+        favoriteGridContainer.display = "none";
+    } else {
+        btnFavoritos.style.display = "block";
+        circleFavoritos.style.display = "none";
+        iconFavoritesEmpty.style.display = "none";
+        favoriteGridEmpty.display = "none";
+        favoriteGridContainer.display = "grid";
+    }
+}checkLocalStorage();
+
+//Obtain favorite icons from local storage
+console.log(window.localStorage.getItem("gifsIds"));
