@@ -1,0 +1,28 @@
+#form{
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    padding: 3%;
+    margin: 2% auto 0 auto;
+}
+
+input{
+    height: 30px;
+}
+
+a{
+    text-decoration: none;
+}
+
+#btn_registrar{
+    background-color: rgb(226, 226, 226);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    height: 40px;
+    width: 200px;
+    margin: 1% auto 1% auto;
+}
